@@ -11,3 +11,82 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html, body {  width: 100%; height: 100%; padding: 0; margin: 0; background-color: #EAEAEA }
+body { height: auto; min-height: 100% }
+#root { width: 100%; min-height: 100%; display: grid; grid-template-columns: auto 1fr }
+* { outline: 0 }
+
+.sidebar { height: 100%; padding-right: 2rem; background-color: #07C }
+.sidebar .logo { display: flex; font-size: 1.3rem; color: #FFF; align-items: center; margin: 1rem 1rem 2rem 1rem }
+.sidebar .logo svg { display: inline-block; height: 2rem; width: 2rem; margin-right: 1rem }
+.sidebar menu { padding: 0; margin: 0 0 4rem 1rem }
+.sidebar li { list-style-type: none; margin: 0 0 1.5rem 0; padding: 0 }
+.sidebar menu a { font-size: 1.2rem; display: grid; grid-template-columns: auto 1fr; font-weight: bold; text-decoration: none; color: #FFF }
+.sidebar menu a svg { display: inline-block; height: 1.2rem; margin: 0 0.5rem 0 0; padding: 0 }
+.sidebar menu a:hover { color: yellow }
+.sidebar menu a:hover svg { fill: yellow }
+
+.container { display: grid; grid-template-rows: auto 1fr }
+.header { display: grid; grid-template-rows: 1fr 1fr; background-color: #FFF; box-shadow: 0.5rem 0 1rem 0.25rem #CCC; padding: 2rem 0 }
+.header .upper { display: grid; grid-template-columns: 70% auto auto; margin: 0 1rem }
+.header form { display: flex; height: 2rem }
+.header form svg { height: 2rem }
+.header form input { height: 1rem; padding: 0.5rem; background-color: #EAEAEA; border-radius: 0.5rem; width: 100%; border: none }
+.header .icon-button { height: 2rem; width: auto; background-color: transparent; border: none }
+.header .icon-button svg { height: 2rem; width: 2rem }
+.header .avatar-button { display: flex; font-weight: bold; border: none; height: 3rem; background-color: transparent; border: none }
+.header .avatar-button .avatar-wrapper { margin-right: 1rem; display: inline-block; border-radius: 100%; width: 3rem; height: 3rem; background-size: 3rem 3rem; background-repeat: no-repeat; }
+.header .avatar-button span { margin-right: 1rem; height: 3rem; line-height: 3rem }
+.header .lower { display: grid; grid-template-columns: 8rem auto 20rem }
+.header .lower .avatar-wrapper { margin-left: 2rem; width: 6rem; height: 6rem; background-size: 6rem 6rem; border-radius: 100% }
+.header .lower menu { height: 2rem; margin: 3rem 0 0 0; text-align: right; padding: 0 }
+.header .lower menu button { cursor: pointer; background-color: #07C; color: #FFF; font-weight: bold; padding: 0.5rem 1.5rem; margin-right: 1rem; border-radius: 0.5rem; border: none }
+.header .lower menu button:hover { background-color: #369 }
+.header .welcome { font-size: 2rem; margin-left: 1rem; display: flex; flex-direction: column; justify-content: center }
+.header .welcome span { font-weight: bold; font-size: 1rem; display: block }
+
+.content { display: grid; grid-template-columns: 3fr 1fr; grid-gap: 1rem; padding-bottom: 4rem; padding-right: 1rem }
+.content ol,
+.content ul { list-style-type: none; background-color: #FFF; padding: 0; margin: 0; border-radius: 0.5rem }
+.content h2 { font-weight: normal }
+.content li { margin: 0; padding: 0 }
+
+.projects { padding: 0 2rem }
+.projects ol { padding: 0; margin: 0; background-color: transparent; width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); grid-gap: 2rem; }
+.projects .project { border-left: 4px solid gold; background-color: #FFF; padding: 1rem; box-shadow: 0 0 1rem #CCC; border-radius: 0.5rem }
+.projects .project menu { text-align: right; width: 100%; margin: 0; padding: 0 }
+.projects .project button { border: none; background-color: transparent; cursor: pointer }
+.projects .project svg { height: 2rem; width: 2rem; fill: #333; color: #333 }
+.projects .project svg:hover { color: #369; fill: #369 }
+
+.announcements ol { padding: 1rem 2rem }
+.announcements li { border-bottom: 1px solid #CCC }
+.announcements li:last-of-type { border-bottom: none }
+
+.trending ul { padding: 1rem 2rem }
+.trending .trending-item { display: flex; margin-bottom: 2rem }
+.trending .trending-item:last-of-type { margin-bottom: none }
+.trending .avatar-wrapper { display: inline-block; border-radius: 100%; width: 4rem; height: 4rem; background-size: 4rem 4rem; background-repeat: no-repeat; margin-right: 0.5rem }
+.trending .information { display: flex; flex-direction: column; justify-content: center }
+.trending .project { display: block; margin-top: 0.5rem; color: #666; }
+
+@media(max-width: 550px) {
+  .projects ol { display: block }
+  .projects .project { margin-bottom: 2rem }
+}
+
+@media(max-width: 850px) {
+  #root { display: block }
+  .container { display: block }
+  .sidebar { padding: 0; height: auto }
+  .sidebar .logo { margin: 0; padding: 1rem }
+  .sidebar menu { margin: 0; padding: 1rem 1rem 0.5rem 1rem; display: inline-block }
+  .sidebar menu li,
+  .sidebar menu a { display: inline-block; margin: 0; font-weight: normal }
+  .sidebar menu a { margin: 0 1rem 0.5rem 0 }
+  .sidebar menu a svg { height: 1rem }
+  .content { display: block }
+  .announcements { margin: 0 2rem }
+  .trending { margin: 0 2rem }
+}
